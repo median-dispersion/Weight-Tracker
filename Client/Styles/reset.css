@@ -13,6 +13,6 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: var(--font-line-height-normal);
     color: var(--font-color-primary);
-    background-color: var(--background-color);
+    background-color: var(--theme-background-color);
 
 }
