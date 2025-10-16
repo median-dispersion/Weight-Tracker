@@ -11,6 +11,13 @@ export default class HeaderElement extends HTMLElement {
         // Call parent constructor
         super();
 
+    }
+
+    // ============================================================================================
+    // Connected callback
+    // ============================================================================================
+    connectedCallback() {
+
         // Get the initial scroll offset
         this.#scroll = window.scrollY;
 

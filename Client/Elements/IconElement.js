@@ -11,6 +11,13 @@ export default class IconElement extends HTMLElement {
         // Call the parent constructor
         super();
 
+    }
+
+    // ============================================================================================
+    // Connected callback
+    // ============================================================================================
+    connectedCallback() {
+
         // Get the source attribute
         const source = this.getAttribute("src");
 
