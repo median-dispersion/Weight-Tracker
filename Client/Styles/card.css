@@ -80,8 +80,6 @@
     align-items: center;
     gap: var(--whitespace-normal);
     flex-grow: 1;
-    flex-shrink: 0;
-    min-width: 48px;
     height: 100%;
     min-height: 48px;
     cursor: pointer;
@@ -96,7 +94,7 @@
 
 }
 
-.card__text--title {
+.card__text--label {
 
     font-size: var(--font-size-small);
     color: var(--font-color-tertiary);
@@ -118,6 +116,8 @@
 
 .card__input {
 
+    width: 100%;
+    min-width: 48px;
     border: none;
     font-family: var(--font-family);
     font-size: var(--font-size-normal);
@@ -148,6 +148,7 @@
 .card__input--hidden {
 
     width: 0;
+    min-width: 0;
     height: 0;
     opacity: 0;
     user-select: none;
@@ -156,6 +157,7 @@
 
 .card__state {
 
+    flex-shrink: 0;
     position: relative;
 
 }
