@@ -11,15 +11,12 @@
     outline-color: transparent;
     border: none;
     border-radius: var(--border-radius-normal);
-    font-family: var(--font-family);
-    font-size: var(--font-size-normal);
     font-weight: var(--font-weight-bold);
-    line-height: var(--font-line-height-normal);
-    color: var(--button-normal-foreground-color);
     background-color: var(--button-normal-background-color);
     cursor: pointer;
     user-select: none;
     transition: var(--transition-time-normal);
+    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -43,7 +40,7 @@
 
 }
 
-.button__title {
+.button__label {
 
     flex-grow: 1;
     overflow: hidden;

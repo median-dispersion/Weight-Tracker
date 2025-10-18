@@ -8,11 +8,25 @@
 
 body {
 
-    font-family: var(--font-family);
+    font-family: var(--font-family-normal);
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
     line-height: var(--font-line-height-normal);
     color: var(--font-color-primary);
     background-color: var(--theme-background-color);
+
+}
+
+input, button, select {
+
+    font: inherit;
+    color: inherit;
+
+}
+
+a {
+
+    color: inherit;
+    text-decoration: none;
 
 }

@@ -16,7 +16,7 @@ export default class IconElement extends HTMLElement {
     // ============================================================================================
     // Connected callback
     // ============================================================================================
-    connectedCallback() {
+    async connectedCallback() {
 
         // Get the source attribute
         const source = this.getAttribute("src");
@@ -24,27 +24,22 @@ export default class IconElement extends HTMLElement {
         // Check if a source was provided
         if (source) {
 
-            // Fetch the source data
-            fetch(source)
+            // Try loading the source data
+            try {
 
-            // Handle the HTTP response
-            .then(response => {
+                // Fetch the source data
+                const response = await fetch(source);
 
-                // Check if the HTTP did not return 200 OK
+                // Check if the HTTP request did not return 200 OK
                 if (!response.ok) {
 
                     // Throw an error
-                    throw new Error(`HTTP error! Status: ${response.status}.`);
+                    throw new Error(`HTTP status: ${response.status}!`);
 
                 }
 
                 // Parse the response data as text
-                return response.text();
-
-            })
-
-            // Handle parsed response text
-            .then(text => {
+                const text = await response.text();
 
                 // Use the DOM parser to parse the response text as HTML
                 const parser = new DOMParser();
@@ -62,17 +57,15 @@ export default class IconElement extends HTMLElement {
                 }
 
                 // Append the svg data to this element
-                this.appendChild(svg);
-
-            })
-
+                this.append(svg);
+            
             // Handle errors while loading the source data
-            .catch(error => {
+            } catch (error) {
 
                 // Output error message to the console
                 console.error(error);
 
-            });
+            }
 
         }
 

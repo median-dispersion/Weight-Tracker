@@ -13,6 +13,7 @@
 
 .header--floating {
 
+    white-space: nowrap;
     background-color: var(--theme-foreground-color);
 
 }
@@ -31,11 +32,13 @@
 
 }
 
-.header__title {
+.header__label {
 
     flex-grow: 1;
+    overflow: hidden;
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
+    text-overflow: ellipsis;
 
 }
 
